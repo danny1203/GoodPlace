@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoodPlaces.Core.Pages.PlaceDetailPage"
+             xmlns:res="clr-namespace:GoodPlaces.Core.Resources;assembly=GoodPlaces.Core"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             Title="Place Details">
+		<ContentPage.Content>
+        <StackLayout>
+            <Label Text="place name"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" FontSize="Large" />
+			<Label Text="Address" 
+                HorizontalOptions="Start" />
+			<Label Text="Address text"
+                HorizontalOptions="Start" />
+			<Label Text="Distance"
+                HorizontalOptions="Start" />
+			<Label Text="Distance text"
+                HorizontalOptions="Start" />
+			<Image Source="splash.png" AnchorX="200" AnchorY="200">				
+			</Image>
+        </StackLayout>
+    </ContentPage.Content>
+</mvx:MvxContentPage>

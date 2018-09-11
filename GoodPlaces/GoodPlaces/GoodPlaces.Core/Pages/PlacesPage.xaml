@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoodPlaces.Core.Pages.PlacesPage"
+             xmlns:res="clr-namespace:GoodPlaces.Core.Resources;assembly=GoodPlaces.Core"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             Title="Place List">
+    <ContentPage.Content>
+		<StackLayout>
+			<ListView  x:Name="lstView" ItemsSource="{Binding Items}" HorizontalOptions="Fill" VerticalOptions="Fill"
+              CachingStrategy="RecycleElement" RowHeight="60" SelectionMode="Single" ItemSelected="lstView_ItemSelected">
+				<!--SelectedItem="{Binding SelectPlace}"-->
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout Margin="8">
+								<Label Text="{Binding Distance}"
+                                   FontAttributes="Bold" TextColor="Black" />
+								<Label Text="{Binding Name}" />
+							</StackLayout>
+							<!--<StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+							<Image Source="{Binding Distance}" HorizontalOptions="start"/>
+							<StackLayout Orientation="Vertical">
+								<Label Text = "{Binding Name}" FontSize="24" HorizontalOptions="End"/>
+								<Label Text = "{Binding Ranking}" HorizontalOptions="End"/>
+							</StackLayout>-->
+							<!--<Image Source="{Binding Image}" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
+							<!--</StackLayout>-->
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<Button Text="Get near locations" Command="{Binding GetCurrentLocation}" />
+			<Label x:Name="Location" Text="Address text"
+                HorizontalOptions="Start" />
+		</StackLayout>
+	</ContentPage.Content>
+</mvx:MvxContentPage>
