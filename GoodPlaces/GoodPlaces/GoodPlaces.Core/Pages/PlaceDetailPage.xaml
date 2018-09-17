@@ -6,13 +6,17 @@
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              Title="Place Details">
 		<ContentPage.Content>
-        <StackLayout>
-            <Label Text="place name"
+		<StackLayout Orientation="Vertical" 
+					 Padding="30" 
+					 Spacing="10">
+            <Label Text="{Binding Name}"
                 VerticalOptions="Start" 
-                HorizontalOptions="CenterAndExpand" FontSize="Large" />
+                HorizontalOptions="CenterAndExpand" 
+				   FontSize="Large" 
+				   FontAttributes="Bold" />
 			<Label Text="Address" 
                 HorizontalOptions="Start" />
-			<Label Text="Address text"
+			<Label Text="{Binding PlaceDetail.Address}"
                 HorizontalOptions="Start" />
 			<Label Text="Distance"
                 HorizontalOptions="Start" />

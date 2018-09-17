@@ -16,25 +16,19 @@ namespace GoodPlaces.Core.ViewModels
 		private readonly Services.IAppSettings _settings;
 		private readonly IUserDialogs _userDialogs;
 
-		//private Dictionary<string, string> _parameter;
 		private readonly ILocalizeService _localizeService;
 
-		//public LoginViewModel(IMvxNavigationService navigationService, Services.IAppSettings settings, IUserDialogs userDialogs, ILocalizeService localizeService)
 		public LoginViewModel(IMvxNavigationService navigationService, Services.IAppSettings settings, IUserDialogs userDialogs, ILocalizeService localizeService)
 		{
 			_navigationService = navigationService;
 			_settings = settings;
 			_userDialogs = userDialogs;
 			_localizeService = localizeService;
-
-			//MainPageButtonText = "test";
 		}
 
 		public IMvxAsyncCommand LoginCommand =>
 			new MvxAsyncCommand(async () =>
 			{
-				//var param = new Dictionary<string, string> { { "ButtonText", ButtonText } };
-
 				await _navigationService.Navigate<PlacesViewModel>();
 			});
 
