@@ -7,7 +7,7 @@ namespace GoodPlaces.Logic.Models
 {
 	public class DataDetails
 	{
-		[JsonProperty("results")]
+		[JsonProperty("result")]
 		public Place Place { get; set; }
 	}
 }
