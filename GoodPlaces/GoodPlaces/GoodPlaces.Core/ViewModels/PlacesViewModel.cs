@@ -17,7 +17,7 @@ namespace GoodPlaces.Core.ViewModels
 	public class PlacesViewModel : MvxViewModel
 	{
 		private readonly IMvxNavigationService _navigationService;
-		public IMvxCommand ItemTappedCommand { get; private set; }
+		public MvvmCross.Commands.IMvxCommand ItemTappedCommand { get; private set; }
 
 		public PlacesViewModel(IMvxNavigationService navigationService)
 		{
@@ -69,7 +69,7 @@ namespace GoodPlaces.Core.ViewModels
 					locator.DesiredAccuracy = 50;
 					try
 					{
-						var position = await locator.GetPositionAsync();
+					var position = await locator.GetPositionAsync();
 						Console.WriteLine("Position Status: {0}", position.Timestamp);
 						Console.WriteLine("Position Latitude: {0}", position.Latitude);
 						Console.WriteLine("Position Longitude: {0}", position.Longitude);

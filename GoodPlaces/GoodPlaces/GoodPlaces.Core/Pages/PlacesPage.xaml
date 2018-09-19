@@ -7,7 +7,8 @@
 			 xmlns:controls="clr-namespace:GoodPlaces.Core.Controls"
 			 xmlns:converters="clr-namespace:GoodPlaces.Core.Converters;assembly=GoodPlaces.Core"
 		     xmlns:behaviors="clr-namespace:GoodPlaces.Core.Behaviors;assembly=GoodPlaces.Core"
-			 Title="Place List">
+					xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
+					Title="Place List">
     <ContentPage.Content>
 		<StackLayout>
 			<ListView  x:Name="lstView" ItemsSource="{Binding Items}" HorizontalOptions="Fill" VerticalOptions="Fill"
@@ -21,16 +22,10 @@
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<controls:CustomCell></controls:CustomCell>
-						<!--<ViewCell>
-							<StackLayout Margin="8">
-								<Label Text="{Binding Distance}"
-                                   FontAttributes="Bold" TextColor="Black" />
-								<Label Text="{Binding Name}" />
-							</StackLayout>
-						</ViewCell>-->
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
+			<rating:SfRating x:Name="rating" Precision="Standard"  ItemSize="10" Value="3" />
 		</StackLayout>
 	</ContentPage.Content>
 </mvx:MvxContentPage>

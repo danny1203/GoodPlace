@@ -3,6 +3,7 @@
 // <url>https://www.linkedin.com/in/pauldatsyuk/</url>
 // ---------------------------------------------------------------
 
+using System;
 using UIKit;
 
 namespace GoodPlaces.iOS
@@ -14,7 +15,13 @@ namespace GoodPlaces.iOS
 		{
 			// if you want to use a different Application Delegate class from "AppDelegate"
 			// you can specify it here.
-			UIApplication.Main(args, null, "AppDelegate");
+			try
+			{
+				UIApplication.Main(args, null, "AppDelegate");
+			} catch(Exception ex) {
+				Console.WriteLine(ex);
+			}
+			
 		}
 	}
 }

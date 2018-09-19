@@ -22,7 +22,7 @@
                 HorizontalOptions="Start" />
 			<Label Text="Distance text"
                 HorizontalOptions="Start" />
-			<Image Source="splash.png" AnchorX="200" AnchorY="200">				
+			<Image Source="{Binding PlaceDetail.Photo}" AnchorX="200" AnchorY="200">				
 			</Image>
         </StackLayout>
     </ContentPage.Content>

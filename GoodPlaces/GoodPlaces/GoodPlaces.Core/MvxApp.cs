@@ -33,7 +33,7 @@ namespace GoodPlaces.Core
 			//IMvxNavigationViewModel
 
 			Resources.AppResources.Culture = Mvx.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
-
+			Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjQ5NTFAMzEzNjJlMzMyZTMwTlBBdjNSTy9wa0liRkpva2N2MC9JYlhIVlBLVDJWS2h6bXhVcHV1QXlqTT0=");
 			//RegisterAppStart<ViewModels.MainViewModel>();
 			RegisterAppStart<ViewModels.LoginViewModel>();
 		}

@@ -26,6 +26,7 @@ namespace GoodPlaces.Droid
 
 		public override void OnCreate()
 		{
+			Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjQ5NTFAMzEzNjJlMzMyZTMwTlBBdjNSTy9wa0liRkpva2N2MC9JYlhIVlBLVDJWS2h6bXhVcHV1QXlqTT0=");
 			base.OnCreate();
 
 			RegisterActivityLifecycleCallbacks(this);

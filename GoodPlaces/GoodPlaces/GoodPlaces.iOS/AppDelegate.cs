@@ -5,6 +5,7 @@
 
 using Foundation;
 using MvvmCross.Forms.Platforms.Ios.Core;
+using Syncfusion.SfRating.XForms.iOS;
 using UIKit;
 
 namespace GoodPlaces.iOS
@@ -26,7 +27,8 @@ namespace GoodPlaces.iOS
 		{
 			Window = new UIWindow(UIScreen.MainScreen.Bounds);
 			Window.MakeKeyAndVisible();
-
+			Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjQ5NTFAMzEzNjJlMzMyZTMwTlBBdjNSTy9wa0liRkpva2N2MC9JYlhIVlBLVDJWS2h6bXhVcHV1QXlqTT0=");
+			new SfRatingRenderer();
 			return base.FinishedLaunching(app, options);
 		}
 

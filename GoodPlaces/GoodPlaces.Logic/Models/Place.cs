@@ -1,24 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using GeoCoordinatePortable;
 using Newtonsoft.Json;
+using MvvmCross.Commands;
 
 namespace GoodPlaces.Logic.Models
 {
 	public class Place
 	{
-
-		private string _distance { get; set; }
-		public string Distance {
-			get { return _distance; }
-			set
-			{
-				if (_distance != value)
-				{
-					_distance = value;
-				}
-			}
-		}
 		[JsonProperty("name")]
 		public string Name { get; set; }
 		[JsonProperty("rating")]
@@ -33,5 +23,70 @@ namespace GoodPlaces.Logic.Models
 		public string PlaceId { get; set; }
 		[JsonProperty("formatted_phone_number")]
 		public string PhoneNumber { get; set; }
+		[JsonProperty("geometry")]
+		public GeometryData Geometry { get; set; }
+		[JsonProperty("photos")]
+		public IEnumerable<Photos> Photos { get; set; }
+
+		private string _distance { get; set; }
+		public string Distance
+		{
+			get
+			{
+				var sCoord = new GeoCoordinate(Geometry.Location.Latitude, Geometry.Location.Longitude);
+				var eCoord = new GeoCoordinate(Geometry.Viewport.Northeast.Latitude, Geometry.Viewport.Northeast.Longitude);
+
+				return Convert.ToInt32(sCoord.GetDistanceTo(eCoord)) + "m";
+			}
+			set
+			{
+				_distance = value;
+			}
+		}
+		private string _photo { get; set; }
+		public string Photo
+		{
+			get
+			{
+				string image = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=CmRaAAAAtF8f2Ri1T6SwYk7qPhS8Wna9L_F77eHdsKEx2CKQ9ubhHUy7lDH9WLnL1NV98ZdKM4eU5iWjJAUd42wFeGIRBGTYsuZ7xocCUqJLoMwCu4ktTwdmoYVUHYzIGbyN5qAgEhApLVsEYLiOPsFve4b9dnGhGhT9Bmwm2EadFjwEyPdWdWpZcKK7ag&key=AIzaSyDJgfFUC7V8Hn1n2K7x3KklmgzM_BmVGU0";
+
+				return image;
+			}
+			set
+			{
+				_photo = value;
+			}
+		}
+	}
+
+	public class GeometryData
+		{
+		[JsonProperty("location")]
+		public Location Location { get; set; }
+		[JsonProperty("viewport")]
+		public Viewport Viewport { get; set; }
+	}
+
+	public class Location
+	{
+		[JsonProperty("lat")]
+		public double Latitude { get; set; }
+		[JsonProperty("lng")]
+		public double Longitude { get; set; }
+	}
+
+	public class Viewport
+	{
+		[JsonProperty("northeast")]
+		public Location Northeast { get; set; }
+		[JsonProperty("southwest")]
+		public Location Southwest { get; set; }
+	}
+
+
+	public class Photos
+	{
+		[JsonProperty("photo_reference")]
+		public string Reference { get; set; }
 	}
 }
