@@ -31,9 +31,6 @@
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
-			<Button Text="Get near locations" Command="{Binding GetCurrentLocation}" />
-			<Label x:Name="Location" Text="Address text"
-                HorizontalOptions="Start" />
 		</StackLayout>
 	</ContentPage.Content>
 </mvx:MvxContentPage>

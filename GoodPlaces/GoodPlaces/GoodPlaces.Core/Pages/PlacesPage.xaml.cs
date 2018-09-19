@@ -19,11 +19,6 @@ namespace GoodPlaces.Core.Pages
 		{
 			InitializeComponent ();
 		}
-
-		private void lstView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-		{
-			var viewModel = ViewModel as PlacesViewModel;
-			viewModel.goToDetailsAsync(e.SelectedItem as Place);
-		}
+		
 	}
 }

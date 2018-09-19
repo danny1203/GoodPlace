@@ -36,11 +36,6 @@ namespace GoodPlaces.Core.ViewModels
 			}
 		}
 
-		public void goToDetailsAsync(Place place)
-		{
-			_navigationService.Navigate<PlaceDetailViewModel, Place>(place);
-		}
-
 		public void LoadPlacesViewModel()
 		{
 			/*Items = new ObservableCollection<Place>() {
