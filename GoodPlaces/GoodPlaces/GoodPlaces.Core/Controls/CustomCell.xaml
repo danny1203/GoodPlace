@@ -11,7 +11,7 @@
 			   WidthRequest="100"/>
 		<StackLayout Orientation="Vertical">
 			<Label Text="{Binding Name}" />
-			<Label Text="{Binding Rating}" />
+			<Label Text="{Binding RatingText}" />
 		</StackLayout>		
 	</StackLayout>
 </ViewCell>

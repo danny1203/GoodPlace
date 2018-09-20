@@ -4,6 +4,8 @@ using System.Text;
 using GeoCoordinatePortable;
 using Newtonsoft.Json;
 using MvvmCross.Commands;
+using System.Linq;
+using GoodPlaces.Logic.Utils;
 
 namespace GoodPlaces.Logic.Models
 {
@@ -36,7 +38,7 @@ namespace GoodPlaces.Logic.Models
 				var sCoord = new GeoCoordinate(Geometry.Location.Latitude, Geometry.Location.Longitude);
 				var eCoord = new GeoCoordinate(Geometry.Viewport.Northeast.Latitude, Geometry.Viewport.Northeast.Longitude);
 
-				return Convert.ToInt32(sCoord.GetDistanceTo(eCoord)) + "m";
+				return Convert.ToInt32(sCoord.GetDistanceTo(eCoord)) + " m";
 			}
 			set
 			{
@@ -49,12 +51,32 @@ namespace GoodPlaces.Logic.Models
 			get
 			{
 				string image = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=CmRaAAAAtF8f2Ri1T6SwYk7qPhS8Wna9L_F77eHdsKEx2CKQ9ubhHUy7lDH9WLnL1NV98ZdKM4eU5iWjJAUd42wFeGIRBGTYsuZ7xocCUqJLoMwCu4ktTwdmoYVUHYzIGbyN5qAgEhApLVsEYLiOPsFve4b9dnGhGhT9Bmwm2EadFjwEyPdWdWpZcKK7ag&key=AIzaSyDJgfFUC7V8Hn1n2K7x3KklmgzM_BmVGU0";
-
+				try
+				{
+					var firstImage = Photos.Cast<Photos>().First();
+					image = string.Format("https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&photoreference={0}&key={1}", firstImage.Reference, Constants.ApiKey);
+				} catch (Exception ex)
+				{
+					Console.WriteLine("error on get image " + ex);
+				}
+				
 				return image;
 			}
 			set
 			{
 				_photo = value;
+			}
+		}
+		private string _ratingText { get; set; }
+		public string RatingText
+		{
+			get
+			{
+				return Rating + " Stars";
+			}
+			set
+			{
+				_ratingText = value;
 			}
 		}
 	}

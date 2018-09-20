@@ -25,7 +25,7 @@
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
-			<rating:SfRating x:Name="rating" Precision="Standard"  ItemSize="10" Value="3" />
+			<!--<rating:SfRating x:Name="rating" Precision="Standard"  ItemSize="10" Value="3" />-->
 		</StackLayout>
 	</ContentPage.Content>
 </mvx:MvxContentPage>

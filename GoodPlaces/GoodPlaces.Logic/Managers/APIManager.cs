@@ -28,7 +28,7 @@ namespace GoodPlaces.Logic.Managers
 		private static string getUrlPlaceDetails(string PlaceId)
 		{
 			//https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJ89S_Lgx045MRl1_v46KLKx4&fields=name,rating,formatted_phone_number,icon,vicinity&key=AIzaSyDJgfFUC7V8Hn1n2K7x3KklmgzM_BmVGU0
-			string url = string.Format("{0}/details/json?placeid={1}&fields=name,rating,formatted_phone_number,icon,vicinity&key={2}", Constants.URLBase, PlaceId, Constants.ApiKey);
+			string url = string.Format("{0}/details/json?placeid={1}&fields=name,rating,formatted_phone_number,icon,vicinity,photos,geometry&key={2}", Constants.URLBase, PlaceId, Constants.ApiKey);
 			return url;
 		}
 

@@ -11,11 +11,11 @@
 			<Image HorizontalOptions="Center" WidthRequest="300" Source="maco.jpg"/>
 			<Frame BackgroundColor="#BF043055" HasShadow="False">
 				<StackLayout Orientation="Vertical" Spacing="10">
-                    <Entry x:Name="{res:Translate EmailEntry}" Text="user@user.com" Placeholder="Email"   
+                    <Entry x:Name="Email" Text="user@user.com" Placeholder="Email"   
 								   PlaceholderColor="Gray" HeightRequest="40"   
 								   Keyboard="Email"  
 								   TextColor="Black"/>
-                    <Entry x:Name="{res:Translate PasswordEntry}" Text="user" Placeholder="Contraseña"   
+                    <Entry x:Name="Password" Text="user" Placeholder="Contraseña"   
 								   PlaceholderColor="Gray" HeightRequest="40"   
 								   IsPassword="True"  
 								   TextColor="Black"/>
