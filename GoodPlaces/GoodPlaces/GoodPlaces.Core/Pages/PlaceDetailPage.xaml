@@ -14,15 +14,19 @@
                 HorizontalOptions="CenterAndExpand" 
 				   FontSize="Large" 
 				   FontAttributes="Bold" />
-			<Label Text="Address" 
-                HorizontalOptions="Start" />
+            <Label Text="{res:Translate AddressText}" 
+                HorizontalOptions="Start" 
+                FontAttributes="Bold" />
 			<Label Text="{Binding PlaceDetail.Address}"
-                HorizontalOptions="Start" />
-			<Label Text="Distance"
-                HorizontalOptions="Start" />
-			<Label Text="Distance text"
-                HorizontalOptions="Start" />
-			<Image Source="{Binding PlaceDetail.Photo}" AnchorX="200" AnchorY="200">				
+                HorizontalOptions="Start" 
+                Margin="10, 0, 0, 0" />
+            <Label Text="{res:Translate DistanceText}"
+                HorizontalOptions="Start"
+                FontAttributes="Bold" />
+            <Label Text="{Binding PlaceDetail.Distance}"
+                HorizontalOptions="Start"
+                Margin="10, 0, 0, 0" />
+			<Image Source="{Binding PlaceDetail.Photo}" WidthRequest="200" HeightRequest="200">				
 			</Image>
         </StackLayout>
     </ContentPage.Content>

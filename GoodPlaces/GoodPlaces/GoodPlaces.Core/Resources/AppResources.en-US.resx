@@ -117,8 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddressText" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="DistanceText" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="EmailEntry" xml:space="preserve">
+    <value>Email</value>
+  </data>
   <data name="GoToSecondPageText" xml:space="preserve">
     <value>To Second Page</value>
+  </data>
+  <data name="LoginText" xml:space="preserve">
+    <value>Login</value>
   </data>
   <data name="MainPageButton" xml:space="preserve">
     <value>Press me</value>
@@ -128,5 +140,8 @@
   </data>
   <data name="MainPageTitle" xml:space="preserve">
     <value>Hello Xamarin!</value>
+  </data>
+  <data name="PasswordEntry" xml:space="preserve">
+    <value>Password</value>
   </data>
 </root>
