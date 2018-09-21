@@ -1,25 +1,34 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GoodPlaces.Core.Pages.LoginPage"
              xmlns:res="clr-namespace:GoodPlaces.Core.Resources;assembly=GoodPlaces.Core"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:controls="clr-namespace:GoodPlaces.Core.Controls"
              Title="Login">
 		<ContentPage.Content>
 		<StackLayout Orientation="Vertical" Padding="30" Spacing="40">
 			<BoxView HeightRequest="10"/>
-			<Image HorizontalOptions="Center" WidthRequest="300" Source="maco.jpg"/>
 			<Frame BackgroundColor="#BF043055" HasShadow="False">
 				<StackLayout Orientation="Vertical" Spacing="10">
-                    <Entry x:Name="Email" Text="user@user.com" Placeholder="Email"   
-								   PlaceholderColor="Gray" HeightRequest="40"   
-								   Keyboard="Email"  
-								   TextColor="Black"/>
-                    <Entry x:Name="Password" Text="user" Placeholder="Contraseña"   
+                    <StackLayout Orientation="Vertical">
+                        <controls:CustomEntry x:Name="Email" Text="{Binding Email}" Placeholder="Email"   
+                                   PlaceholderColor="Gray" HeightRequest="40"   
+                                   Keyboard="Email"  
+                                   TextColor="White" />
+                    
+                        <Label Text="{Binding ErrorMessage}" 
+                               HorizontalOptions="Start" 
+                               FontAttributes="Bold"
+                               TextColor="Red"
+                               FontSize="Small"
+                               IsVisible="{Binding IsVisible}"/>
+                    </StackLayout>
+                    <controls:CustomEntry x:Name="Password" Text="{Binding Password}" Placeholder="Password"   
 								   PlaceholderColor="Gray" HeightRequest="40"   
 								   IsPassword="True"  
-								   TextColor="Black"/>
-				</StackLayout>
+								   TextColor="White"/>
+                </StackLayout>
 			</Frame>
             <Button Command="{Binding LoginCommand}" Text="{res:Translate LoginText}" TextColor="White"  
 							FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand" />

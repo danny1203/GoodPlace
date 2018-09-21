@@ -4,6 +4,7 @@
 // ---------------------------------------------------------------
 
 using Acr.UserDialogs;
+using GoodPlaces.Core.Services;
 using MvvmCross;
 using MvvmCross.Base;
 using MvvmCross.IoC;
@@ -29,6 +30,7 @@ namespace GoodPlaces.Core
 			Mvx.RegisterType<Services.IAppSettings, Services.AppSettings>();
 			Mvx.RegisterType<IMvxJsonConverter, MvxJsonConverter>();
 			Mvx.RegisterSingleton<IUserDialogs>(() => UserDialogs.Instance);
+            Mvx.ConstructAndRegisterSingleton<ILoginServices, LoginMockServices>();
 
 			//IMvxNavigationViewModel
 

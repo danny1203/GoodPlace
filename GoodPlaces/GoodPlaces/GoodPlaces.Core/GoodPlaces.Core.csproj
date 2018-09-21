@@ -73,6 +73,12 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>AppResources.resx</DependentUpon>
         </Compile>
+        <Compile Update="Resources\AppResources.en-US.Designer.cs">
+          <DependentUpon>AppResources.en-US.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Resources\AppResources.de.Designer.cs">
+          <DependentUpon>AppResources.de.resx</DependentUpon>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Update="Controls\CustomCell.xaml">
@@ -97,13 +103,6 @@
             <Generator>ResXFileCodeGenerator</Generator>
             <LastGenOutput>AppResources.en-US.Designer.cs</LastGenOutput>
         </EmbeddedResource>
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Update="Resources\AppResources.de.Designer.cs">
-            <DesignTime>True</DesignTime>
-            <AutoGen>True</AutoGen>
-            <DependentUpon>AppResources.de.resx</DependentUpon>
-        </Compile>
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Update="Resources\AppResources.de.resx">

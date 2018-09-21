@@ -12,10 +12,10 @@ namespace GoodPlaces.Core.Services
 		public const string SuperNumberKey = "SuperNumberKey";
 		public const int SuperNumberDefaultValue = 1;
 
-		public int SuperNumber
+        public int SuperNumber
 		{
 			get { return Preferences.Get(SuperNumberKey, SuperNumberDefaultValue); }
 			set { Preferences.Set(SuperNumberKey, value); }
 		}
-	}
+    }
 }
